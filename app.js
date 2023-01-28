@@ -35,7 +35,7 @@ if (name.exact_match_name) {
 }
 else  {
   resultDiv.innerHTML=`
-  <div class="card" mx-auto m-3 shadow-lg style="width: 18rem;">
+  <div class="card" mx-auto m-3 shadow-lg style="width: 20rem;">
   <img src="${named}" class="card-img-top" alt="${name.value}">
   <div class="card-body">
     <h5 class="card-title">${value} Renginin Bilgileri</h5>
@@ -43,7 +43,7 @@ else  {
   <ul class="list-group list-group-flush">
     <li class="list-group-item text-danger">Rengin bir adı bulunmamaktadır.</li>
     <li class="list-group-item text-danger">Gösterilen renk en yakın renktir.</li>
-    <li class="list-group-item">En yakın Rengin HEX KODU: ${name.closest_named_hex}</li>
+    <li class="list-group-item">Resimdeki Rengin HEX KODU: ${name.closest_named_hex}</li>
     <li class="list-group-item">HEX KODU: ${value}</li>
     <li class="list-group-item">RGB KODU: ${rgb.value}</li>
     <li class="list-group-item">HSL KODU: ${hsl.value}</li>
@@ -91,10 +91,8 @@ button.addEventListener("click",(e)=>{
   getColors(doRandomNumbers());
 });
 
-
-
 //? Ekrana basılacak ilk renk
-getColors("2660a4")
+getColors("C71585")
 
 
 
