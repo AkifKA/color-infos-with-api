@@ -28,7 +28,7 @@ resultDiv.innerHTML=`
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Varsa Gerçek Adı: ${name.exact_match_name}</li>
-    <li class="list-group-item">En yakın Renk: ${closest_named_hex}</li>
+    <li class="list-group-item">En yakın Renk: ${name.closest_named_hex}</li>
     <li class="list-group-item">HEX KODU: ${value}</li>
     <li class="list-group-item">RGB KODU: ${rgb.value}</li>
     <li class="list-group-item">HSL KODU: ${hsl.value}</li>
