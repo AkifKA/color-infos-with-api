@@ -43,7 +43,7 @@ else  {
   <ul class="list-group list-group-flush">
     <li class="list-group-item text-danger">Rengin bir adı bulunmamaktadır.</li>
     <li class="list-group-item text-danger">Gösterilen renk en yakın renktir.</li>
-    <li class="list-group-item">En yakın Renk: ${name.closest_named_hex}</li>
+    <li class="list-group-item">En yakın Rengin HEX KODU: ${name.closest_named_hex}</li>
     <li class="list-group-item">HEX KODU: ${value}</li>
     <li class="list-group-item">RGB KODU: ${rgb.value}</li>
     <li class="list-group-item">HSL KODU: ${hsl.value}</li>
