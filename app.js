@@ -11,17 +11,17 @@ const getColors=(hex)=>{
 
 //? Çekilen veriyi düzenleyip DOM'a basma
 showColorInfos=(colorsData)=>{
-const {name, hex:{value},rgb, hsl,hsv,cmyk,XYZ, image:{named},}=colorsData;
+const {name, hex:{value},rgb, hsl,hsv,cmyk,XYZ, image:{named,bare},}=colorsData;
 const resultDiv=document.querySelector(".result");
-resultDiv.innerHTML=`
+
+if (name.exact_match_name) {
+  resultDiv.innerHTML=`
 <div class="card" mx-auto m-3 shadow-lg style="width: 18rem;">
   <img src="${named}" class="card-img-top" alt="${name.value}">
   <div class="card-body">
     <h5 class="card-title">${name.value} Renginin Bilgileri</h5>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Varsa Gerçek Adı: ${name.exact_match_name}</li>
-    <li class="list-group-item">En yakın Renk: ${name.closest_named_hex}</li>
     <li class="list-group-item">HEX KODU: ${value}</li>
     <li class="list-group-item">RGB KODU: ${rgb.value}</li>
     <li class="list-group-item">HSL KODU: ${hsl.value}</li>
@@ -32,6 +32,29 @@ resultDiv.innerHTML=`
   </div>
 </div>
 `
+}
+else  {
+  resultDiv.innerHTML=`
+  <div class="card" mx-auto m-3 shadow-lg style="width: 18rem;">
+  <img src="${named}" class="card-img-top" alt="${name.value}">
+  <div class="card-body">
+    <h5 class="card-title">${value} Renginin Bilgileri</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item text-danger">Rengin bir adı bulunmamaktadır.</li>
+    <li class="list-group-item text-danger">Gösterilen renk en yakın renktir.</li>
+    <li class="list-group-item">En yakın Renk: ${name.closest_named_hex}</li>
+    <li class="list-group-item">HEX KODU: ${value}</li>
+    <li class="list-group-item">RGB KODU: ${rgb.value}</li>
+    <li class="list-group-item">HSL KODU: ${hsl.value}</li>
+    <li class="list-group-item">HSV KODU: ${hsv.value}</li>
+    <li class="list-group-item">CMYK KODU: ${cmyk.value}</li>
+    <li class="list-group-item">XYZ KODU: ${XYZ.value}</li>
+  </ul>
+  </div>
+</div>
+  `
+}
 }
 
 
